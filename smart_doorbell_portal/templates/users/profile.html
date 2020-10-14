@@ -2,6 +2,12 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<h1>{{ user.username }} is currently logged in</h1>
+<h1>Your Profile</h1>
+<small><a href="#">Edit your profile</a></small>
+<small class="ml-4"><a href="#">Add a device</a></small>
+
+<p>You are currently signed in as {{ user.username }}
+    Name: {{ user.first_name }}  {{ user.last_name }}</p>
+
 
 {% endblock %}
