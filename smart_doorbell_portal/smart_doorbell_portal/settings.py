@@ -28,6 +28,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'device',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

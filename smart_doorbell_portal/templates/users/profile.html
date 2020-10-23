@@ -4,7 +4,7 @@
 {% block content %}
 <h1>Your Profile</h1>
 <small><a href="#">Edit your profile</a></small>
-<small class="ml-4"><a href="#">Add a device</a></small>
+<small class="ml-4"><a href="{% url 'device_registration' %}">Add a device</a></small>
 
 <p>You are currently signed in as {{ user.username }}
     Name: {{ user.first_name }}  {{ user.last_name }}</p>
