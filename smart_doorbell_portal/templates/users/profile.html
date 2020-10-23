@@ -9,5 +9,12 @@
 <p>You are currently signed in as {{ user.username }}
     Name: {{ user.first_name }}  {{ user.last_name }}</p>
 
+    {% if device.is_connected %}
+      <p>Your device is connected</p>
+    {% else %}
+    <small class="tex-muted">
+      There are currently no devices connected.<a class="ml-1" href="{% url 'device_registration' %}">Connect one now?</a>
+    </small>
+    {% endif %}
 
 {% endblock %}
