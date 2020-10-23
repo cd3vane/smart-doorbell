@@ -5,4 +5,3 @@ from django.db import models
 
 class Device(models.Model):
     device_id = models.CharField(max_length=50)
-    

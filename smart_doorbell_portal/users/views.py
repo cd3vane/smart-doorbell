@@ -22,18 +22,3 @@ def register_view(request):
 @login_required
 def profile_view(request):
     return render(request, 'users/profile.html')
-
-
-def password_reset(request):
-    return render(request, 'users/forgot_pass.html')
-
-def password_reset_done(request):
-    return render(request, 'users/forgot_pass.html')
-
-
-def password_reset_confirm(request):
-    return render(request, 'users/forgot_pass.html')
-
-
-def password_reset_complete(request):
-    return render(request, 'users/forgot_pass.html')
