@@ -1,12 +1,13 @@
 #!/usr/bin/env python
-"""Django's command-line utility for administrative tasks."""
 import os
 import sys
 
+if __name__ == '__main__':
+    if os.environ.get('DJANGO_ENV') == 'production':
+        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'azuresite.production')
+    else:
+        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'azuresite.settings')
 
-def main():
-    """Run administrative tasks."""
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'smart_doorbell_portal.settings')
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
@@ -16,7 +17,3 @@ def main():
             "forget to activate a virtual environment?"
         ) from exc
     execute_from_command_line(sys.argv)
-
-
-if __name__ == '__main__':
-    main()
