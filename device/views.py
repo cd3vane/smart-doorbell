@@ -9,8 +9,8 @@ from django.contrib import messages
 def device_registration(request):
     if request.method == 'POST':
         device_form = DeviceRegistrationForm(request.POST)
-        if form.is_valid():
-            form.save()
+        if device_form.is_valid():
+            device_form.save()
             messages.success(request, f'Your device has successfully been linked!')
             return redirect('profile')
     else:
