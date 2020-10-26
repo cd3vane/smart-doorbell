@@ -31,4 +31,4 @@ jobs:
       with:
         app-name: 'doorbell-portal'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_3e5ee7fb7ed340589f2b4c4cc26a8f0d }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_9b9cf0345dab4158a5d7838fea8dece7 }}
