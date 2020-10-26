@@ -4,9 +4,9 @@ import sys
 
 if __name__ == '__main__':
     if os.environ.get('DJANGO_ENV') == 'production':
-        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'azuresite.production')
+        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'smart_doorbell_portal.production')
     else:
-        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'azuresite.settings')
+        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'smart_doorbell_portal.settings')
 
     try:
         from django.core.management import execute_from_command_line

@@ -51,7 +51,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'azuresite.urls'
+ROOT_URLCONF = 'smart_doorbell_portal.urls'
 
 TEMPLATES = [
     {
@@ -71,7 +71,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'azuresite.wsgi.application'
+WSGI_APPLICATION = 'smart_doorbell_portal.wsgi.application'
 
 
 # Database
