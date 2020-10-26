@@ -1,20 +1,33 @@
-{% extends 'base.html' %}
+{% extends "pages/base.html" %}
 {% load crispy_forms_tags %}
-
 {% block content %}
-<h1>Your Profile</h1>
-<small><a href="#">Edit your profile</a></small>
-<small class="ml-4"><a href="{% url 'device_registration' %}">Add a device</a></small>
+    <div class="content-section">
+      <div class="media">
+        <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+        <div class="media-body">
+          <h2 class="account-heading">{{ user.username }}</h2>
+          <p class="text-secondary">{{ user.email }}</p>
+        </div>
+        <small><a href="#">Edit your profile</a></small>
+        <small class="ml-4"><a href="{% url 'device_registration' %}">Add a device</a></small>
+      </div>
+      {% if device.is_connected %}
+        <p>Your device is connected</p>
+      {% else %}
+      <small class="tex-muted">
+        There are currently no devices connected.<a class="ml-1" href="{% url 'device_registration' %}">Connect one now?</a>
+      </small>
+      {% endif %}
 
-<p>You are currently signed in as {{ user.username }}
-    Name: {{ user.first_name }}  {{ user.last_name }}</p>
-
-    {% if device.is_connected %}
-      <p>Your device is connected</p>
-    {% else %}
-    <small class="tex-muted">
-      There are currently no devices connected.<a class="ml-1" href="{% url 'device_registration' %}">Connect one now?</a>
-    </small>
-    {% endif %}
-
+      <form method="POST" enctype="multipart/form-data">{% csrf_token %}
+        <fieldset class="form-group">
+          <legend class="border-bottom mb-4">Profile Information</legend>
+          {{ u_form|crispy }}
+          {{ p_form|crispy }}
+        </fieldset>
+        <div class="form-group">
+          <button class="btn btn-outline-info" type="submit">Update Account</button>
+        </div>
+      </form>
+    </div>
 {% endblock %}
