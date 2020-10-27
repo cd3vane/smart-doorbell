@@ -27,8 +27,8 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-    'device',
-    'events',
+    'device.apps.DeviceConfig',
+    'events.apps.EventsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -124,7 +124,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+    'var/www/static'
+]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 LOGIN_REDIRECT_URL = 'home'
 LOGIN_URL = 'login'
