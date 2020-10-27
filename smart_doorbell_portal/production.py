@@ -1,4 +1,4 @@
-from .settings import *
+from .settings import BASE_DIR
 import os
 
 # Configure the domain name using the environment variable
@@ -29,7 +29,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': os.environ['DBNAME'],
-        'HOST': hostname + ".postgres.database.azure.com",
+        'HOST': hostname + ".postgres.database.windows.net",
         'USER': os.environ['DBUSER'] + "@" + hostname,
         'PASSWORD': os.environ['DBPASS']
     }
