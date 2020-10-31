@@ -10,7 +10,3 @@ def home_view(request):
 
 def about_view(request):
     return render(request, 'pages/about.html', {})
-
-
-def resume_view(request):
-    return render(request, 'pages/resume_page.html', {})

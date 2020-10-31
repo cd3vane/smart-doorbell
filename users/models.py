@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from device.models import Device
 
 from PIL import Image
 # Create your models here.
@@ -8,6 +9,9 @@ from PIL import Image
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     image = models.ImageField(default='default.jpg', upload_to='profile_pics')
+    device = models.OneToOneField(Device, null=True,
+                                  blank=True, max_length=20,
+                                  on_delete=models.CASCADE)
 
     def __str__(self):
         return f'{self.user.username} Profile'
