@@ -11,13 +11,13 @@
       </div>
         <small><a href="{% url 'update_profile' %}">Edit your profile</a></small>
         <small class="ml-4"><a href="{% url 'device_registration' %}">Add a device</a></small>
-      {% if user.device == null %}
+      {% if device.user.is_registered %}
       <small class="tex-muted">
         There are currently no devices connected.<a class="ml-1" href="{% url 'device_registration' %}">Connect one now?</a>
       </small>
       {% else %}
         <div class="device-information">
-          <h5>{{ device.device_nickname }} is currently registered to this account</h5>
+          <h5>{{ device_device.device_nickname }} is currently registered to this account</h5>
 
         </div>
       {% endif %}
