@@ -7,23 +7,8 @@ import random
 
 
 class Event(models.Model):
-    DOORBELL = 'Doorbell'
-    LOCKED = 'Lock'
-    UNLOCKED = 'Unlock'
-    EVENT_TYPE_CHOICES = [
-        (DOORBELL, 'Doorbell'),
-        (LOCKED, 'Locked'),
-        (UNLOCKED, 'Unlocked')
-    ]
-    event_id = random.choice(string.digits)
-    timestamp = models.DateTimeField()
-    event_type = models.CharField(
-        max_length=10,
-        choices=EVENT_TYPE_CHOICES,
-        default=DOORBELL
-    )
+    device_id = models.IntegerField(max_length=50)
+    event_id = models.IntegerField(max_length=20)
+    event_type = models.CharField(max_length=10)
 
-    def save(self, *args, **kwargs):
-        if self.timestamp is None:
-            self.timestamp = datetime.now()
-        super().save(*args, **kwargs)
+   
