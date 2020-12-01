@@ -12,6 +12,6 @@ from .models import Event
 
 class EventLogView(ListView):
     model = Event
-    template_name = 'events/log_view.html'  # <app>/<model>_<viewtype>.html
+    template_name = 'events/log_view1.html'  # <app>/<model>_<viewtype>.html
     context_object_name = 'events'
     ordering = ['-timestamp']
