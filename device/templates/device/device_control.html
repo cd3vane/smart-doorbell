@@ -1,0 +1,20 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+ 
+  <h1>Control your device</h1>
+  <!-- this is the secton wrapping our new button -->
+  <script type="text/javascript" src="{% static 'main/javascript/publish3.js' %}"></script>
+   <form action=""></form>
+    <button onClick="lockDoor()">Lock</button>
+  </div>
+  <div>
+    <button onClick="unlockDoor()">Unlock</button>
+  </div>
+  <p id="demo"></p>
+  <p id="demo2"></p>
+
+ {% endblock %}

@@ -5,7 +5,7 @@
 
 
 {% for event in events %}
-    <h3>Device: {{ event.device_id }} performed {{ event.event_type }}</h3>
+    <h3>Your device {{ event.device_id }} performed {{ event.event_type }}</h3>
     <small>This occured at {{ event.timestamp }}</small>
 {% endfor %}
 

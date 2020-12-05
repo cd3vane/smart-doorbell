@@ -3,7 +3,6 @@ from .forms import DeviceRegistrationForm
 
 from django.contrib import messages
 from .models import Device
-
 # Create your views here.
 
 
@@ -16,4 +15,8 @@ def device_registration(request):
             return redirect('profile')
     else:
         device_form = DeviceRegistrationForm()
-    return render(request, 'device/register.html', {'device_form': device_form})
+    return render(request, 'device/register_device.html', {'device_form': device_form})
+
+
+def device_control(request):
+    return render(request, 'device/device_control.html')

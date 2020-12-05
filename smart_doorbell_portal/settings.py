@@ -131,3 +131,6 @@ STATIC_ROOT = 'staticfiles'
 
 LOGIN_REDIRECT_URL = 'home'
 LOGIN_URL = 'login'
+
+
+

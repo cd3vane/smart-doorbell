@@ -10,8 +10,8 @@ from django.views.generic import (
 from .models import Event
 # Create your views here.
 
-class EventLogView(ListView):
+class EventLogView(LoginRequiredMixin, ListView):
     model = Event
-    template_name = 'events/log_view1.html'  # <app>/<model>_<viewtype>.html
+    template_name = 'events/log_view1.html'
     context_object_name = 'events'
     ordering = ['-timestamp']
