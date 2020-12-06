@@ -20,7 +20,7 @@ def register_view(request):
 
 @login_required
 def profile_view(request):
-    return render(request, 'users/profile.html')
+    return render(request, 'users/profile1.html')
 
 
 @login_required

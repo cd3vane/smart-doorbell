@@ -1,34 +1,43 @@
 
 function lockDoor(){
-    document.getElementById("demo").innerHTML = "Lock";
-    broker_address="iot.eclipse.org" 
-    client = mqtt.Client("P1") 
-    client.connect(broker_address, port=1883) 
-    client.publish("door/lock/unlock","Lock")
+  var url = "http://52.147.197.133:6600/lock.html";
+  var method = "GET";
+  var postData = "1";
+
+  var shouldBeAsync = true;
+
+  var request = new XMLHttpRequest();
+
+  request.onload = function () {
+    var status = request.status;
+    var data = request.responseText; 
+ }
+ 
+ request.open(method, url, shouldBeAsync);
+ 
+ request.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
+
+ request.send(postData);
 }
+
 
 function unlockDoor(){
-    document.getElementById("demo2").innerHTML = "Unlock";
-    broker_address="iot.eclipse.org" 
-    client = mqtt.Client("P1") 
-    client.connect(broker_address, port=1883) 
-    client.publish("door/lock/unlock","Unlock")
+  var url = "http://52.147.197.133:6600/unlock.html";
+  var method = "GET";
+  var postData = "0";
+
+  var shouldBeAsync = true;
+
+  var request = new XMLHttpRequest();
+
+  request.onload = function () {
+    var status = request.status;
+    var data = request.responseText; 
+ }
+ 
+ request.open(method, url, shouldBeAsync);
+ 
+ request.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
+
+ request.send(postData);
 }
-
-
-var mqtt = require('mqtt')
-var client  = mqtt.connect('mqtt://test.mosquitto.org')
- 
-client.on('connect', function () {
-  client.subscribe('door/lock/unlock', function (err) {
-    if (!err) {
-      client.publish('door/lock/unlock', 'Hello mqtt')
-    }
-  })
-})
- 
-client.on('message', function (topic, message) {
-  // message is Buffer
-  console.log(message.toString())
-  client.end()
-})
