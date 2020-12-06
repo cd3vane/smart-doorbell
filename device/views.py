@@ -19,4 +19,4 @@ def device_registration(request):
 
 
 def device_control(request):
-    return render(request, 'device/device_control1.html')
+    return render(request, 'device/device_control2.html')
