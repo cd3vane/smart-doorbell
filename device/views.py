@@ -3,6 +3,7 @@ from .forms import DeviceRegistrationForm
 
 from django.contrib import messages
 from .models import Device
+from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 
 
@@ -17,6 +18,6 @@ def device_registration(request):
         device_form = DeviceRegistrationForm()
     return render(request, 'device/register_device.html', {'device_form': device_form})
 
-
+@csrf_exempt
 def device_control(request):
     return render(request, 'device/device_control2.html')

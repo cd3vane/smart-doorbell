@@ -50,3 +50,7 @@ ul {
 .footer {
   position: fixed
 }
+
+.button {
+  background-color: #5f788a;
+}
